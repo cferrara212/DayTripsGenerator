@@ -41,13 +41,84 @@ let rebook=prompt("Would you like to change your randomly generated booking? Ple
 // to confirm booking
 //
 
+while (changeBooking === "yes")
+  {
+         alert("Thank you for your interest in changing your booking!");
+       let whatChange= prompt("would you like to change your entire trip, or a part of your trip? Please enter 'entire' or 'part'");
 
+       if (whatChange === "entire")
+       {
+        let isNewDestinationOk;
+        let destination=getRandomFromArray(destinationLocations);
+        let resteraunt=getRandomFromArray(resterauntLocations);
+        let transportation=getRandomFromArray(transportationModes);
+        let entertainment=getRandomFromArray(entertainmentVenues);
+
+        
+        alert("Your new trip has been generated!");
+        alert("Your destination is " + destination + ", your chosen eatery will be a " + resteraunt + ", your transportation will be by " + transportation + ", and your entertainment venue will be " + entertainment );
+        isNewDestinationOk = prompt("Are you happy with your trip? please type 'yes' or 'no'");
+
+                if (isNewDestinationOk === "yes")
+                  {
+                    let bookNew = prompt("wonderful, please answer 'yes' to confirm booking! If there has been a mistake please answer'no'")
+                    if (bookNew === "yes") 
+                    {
+                       alert("your travel plans have been booked!")
+                        changeBooking="plans booked"   
+                    }
+                
+                    else
+                    {
+                         let areYouSure= prompt("Would you like to change your randomly generated booking? Please answer 'yes' or 'no'")
+                         if (areYouSure === "yes") 
+                          {
+                            isOk="changing booking"
+                            changeBooking="yes"
+                          }
+                         else
+                         {
+                             let completeCancel= prompt("Would you like to cancel your trip completely?")
+                             if (completeCancel === "yes")
+                             {
+                                 console.log("Thank you for considering us, please have a wonderful day!");
+                                 alert("Thank you for considering us, please have a wonderful day!");
+                                 isOk="complete cancel"
+                                 changeBooking="complete cancel"
+                             }
+                         }
+                    }               
+                  }
+        
+       }
+
+       if (whatChange === "part")
+       {
+           partOfTripToChange = prompt("What part of your trip would you like to change? Please type 'destination' , 'food' , 'transportation' , or 'entertainment' ")
+              
+       }
+
+       else
+       {
+
+       }
+
+  }
 
 
 //
 // to change booking
 //
 
+
+
+
+
+
+
+//
+// Functions
+//
 
 function getRandomFromArray(arrayForRandom)
 {
