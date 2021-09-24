@@ -29,12 +29,16 @@ isOk= prompt("Is your randomly generated trip ok? Please answer 'yes' or 'no'");
 if (isOk === "no")
 {
 let rebook=prompt("Would you like to change your randomly generated booking? Please type 'yes or 'no'")
-     if (rebook="yes")
+     if (rebook==="yes")
      {
          changeBooking="yes";   
      }
-     else alert("thank you");
-     
+     else
+     { 
+       changeBooking="canceled"
+       isOk="caneled"
+       alert("thank you");
+    }
 }
 
 //
@@ -133,18 +137,177 @@ while (changeBooking === "yes")
                     }               
                   }
         
+                  // 
+                  //change part of trip
+                  //
        }
 
        if (whatChange === "part")
        {
+           let partOfTripToChange="waiting";
            partOfTripToChange = prompt("What part of your trip would you like to change? Please type 'destination' , 'food' , 'transportation' , or 'entertainment' ")
-              
+                 
+
+            //
+            // destination
+            //
+      
+            while(partOfTripToChange=== "destination")
+            {
+              destination=getRandomFromArray(destinationLocations);
+              alert("Wonderful, your new trip details have been generated!");
+              alert("Your destination is " + destination + ", your chosen eatery will be a " + resteraunt + ", your transportation will be by " + transportation + ", and your entertainment venue will be " + entertainment );
+              let isDestinationOk= prompt("Do you like your new destination? Please answer 'yes' or 'no'")
+                  if (isDestinationOk=== "yes")
+                  {
+                      partOfTripToChange = prompt("Would you like to change another part of your trip, or proceed to booking? You may also cancel your trip if you are unsatisfied. Please type 'change' , 'book', or 'cancel'");
+                       if (partOfTripToChange=== "book")
+                       {
+                         partOfTripToChange="plans booked";
+                         whatChange="plans booked";
+                         changeBooking="plans booked"
+                         alert("Your travel plans have been booked!");
+                         
+                       }
+                       else if (partOfTripToChange === "cancel")
+                       {
+                        partOfTripToChange="plans booked";
+                        whatChange="plans booked";
+                        changeBooking="plans booked"
+                        alert("Your plans have been canceled, thank you.");
+                       }
+                       else 
+                       {
+                        partOfTripToChange = prompt("What part of your trip would you like to change? Please type 'food' , 'transportation' , or 'entertainment' ")
+                           
+                       }
+                  }
+                  else
+                  {
+                      
+                  }
+                
+            }
+        
+           // restearaunt
+           
+           while(partOfTripToChange=== "food")
+           {
+             resteraunt=getRandomFromArray(resterauntLocations);
+             alert("Wonderful, your new trip details have been generated!");
+             alert("Your destination is " + destination + ", your chosen eatery will be a " + resteraunt + ", your transportation will be by " + transportation + ", and your entertainment venue will be " + entertainment );
+             let isResterauntOk= prompt("Do you like your new resteraunt? Please answer 'yes' or 'no'")
+                 if (isResterauntOk=== "yes")
+                 {
+                  partOfTripToChange = prompt("Would you like to change another part of your trip, or proceed to booking? You may also cancel your trip if you are unsatisfied. Please type 'change' , 'book', or 'cancel'");                      if (partOfTripToChange=== "book")
+                      {
+                        partOfTripToChange="plans booked";
+                        whatChange="plans booked";
+                        changeBooking="plans booked"
+                        alert("Your travel plans have been booked!");
+                        
+                      }
+                      else if (partOfTripToChange === "cancel")
+                      {
+                       partOfTripToChange="plans booked";
+                       whatChange="plans booked";
+                       changeBooking="plans booked"
+                       alert("Your plans have been canceled, thank you.");
+                      }
+                      else 
+                      {
+                       partOfTripToChange = prompt("What part of your trip would you like to change? Please type 'destination' , 'transportation' , or 'entertainment' ")
+                          
+                      }
+                 }
+                 else
+                 {
+                     
+                 }
+               
+           }
+
+           // 
+           // transportation
+           //
+
+           while(partOfTripToChange=== "transportation")
+            {
+              transportation=getRandomFromArray(transportationModes);
+              alert("Wonderful, your new trip details have been generated!");
+              alert("Your destination is " + destination + ", your chosen eatery will be a " + resteraunt + ", your transportation will be by " + transportation + ", and your entertainment venue will be " + entertainment );
+              let isTransportationOk= prompt("Do you like your new mode of transportation? Please answer 'yes' or 'no'")
+                  if (isTransportationOk=== "yes")
+                  {
+                    partOfTripToChange = prompt("Would you like to change another part of your trip, or proceed to booking? You may also cancel your trip if you are unsatisfied. Please type 'change' , 'book', or 'cancel'");                       if (partOfTripToChange=== "book")
+                       {
+                         partOfTripToChange="plans booked";
+                         whatChange="plans booked";
+                         changeBooking="plans booked"
+                         alert("Your travel plans have been booked!");
+                         
+                       }
+                       else if (partOfTripToChange === "cancel")
+                       {
+                        partOfTripToChange="plans booked";
+                        whatChange="plans booked";
+                        changeBooking="plans booked"
+                        alert("Your plans have been canceled, thank you.");
+                       }
+                       else 
+                       {
+                        partOfTripToChange = prompt("What part of your trip would you like to change? Please type 'food' , 'destination' or 'entertainment' ")
+                           
+                       }
+                  }
+                  else
+                  {
+                      
+                  }
+                
+            }
+            //
+            // entertainment
+            //
+            while(partOfTripToChange=== "entertainment")
+            {
+              entertainment=getRandomFromArray(entertainmentVenues);
+              alert("Wonderful, your new trip details have been generated!");
+              alert("Your destination is " + destination + ", your chosen eatery will be a " + resteraunt + ", your transportation will be by " + transportation + ", and your entertainment venue will be " + entertainment );
+              let isEntertainmentOk= prompt("Do you like your new entertainment venue? Please answer 'yes' or 'no'")
+                  if (isEntertainmentOk=== "yes")
+                  {
+                    partOfTripToChange = prompt("Would you like to change another part of your trip, or proceed to booking? You may also cancel your trip if you are unsatisfied. Please type 'change' , 'book', or 'cancel'");                       if (partOfTripToChange=== "book")
+                       {
+                         partOfTripToChange="plans booked";
+                         whatChange="plans booked";
+                         changeBooking="plans booked"
+                         alert("Your travel plans have been booked!");
+                         
+                       }
+                       else if (partOfTripToChange === "cancel")
+                       {
+                        partOfTripToChange="plans booked";
+                        whatChange="plans booked";
+                        changeBooking="plans booked"
+                        alert("Your plans have been canceled, thank you.");
+                       }
+                       else 
+                       {
+                        partOfTripToChange = prompt("What part of your trip would you like to change? Please type 'food' , 'transportation' , or 'destination' ")
+                           
+                       }
+                  }
+                  else
+                  {
+                      
+                  }
+                
+            }
+           
        }
 
-       else
-       {
 
-       }
 
   }
 

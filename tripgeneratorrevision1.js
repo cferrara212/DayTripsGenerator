@@ -138,6 +138,26 @@ while (changeBooking === "yes")
        if (whatChange === "part")
        {
            partOfTripToChange = prompt("What part of your trip would you like to change? Please type 'destination' , 'food' , 'transportation' , or 'entertainment' ")
+                 
+           if(partOfTripToChange === "destination")
+           {
+
+           }
+
+        if(partOfTripToChange === "food")
+           {
+
+           }
+
+        if(partOfTripToChange === "transportation")
+           {
+
+           }
+
+        if (partOfTripToChange === "entertainment")
+           {
+               
+           }
               
        }
 
